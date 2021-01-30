@@ -1,10 +1,11 @@
 @import-normalize;
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import 'assets/fonts/halvar-breit.scss';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import 'assets/fonts/fonts.scss';
 
 :root {
   --font-inter: 'Inter', sans-serif;
   --font-halvar: 'Halvar Breit', sans-serif;
+  --font-arial: 'Arial Greek', sans-serif;
   --gray: #333;
   --border-color: #d3d3d3;
   --placeholder-color: #888888;
@@ -18,18 +19,18 @@
 }
 
 body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   &,
   input {
     font-family: var(--font-inter);
   }
 
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
   #root {
     width: 100%;
     display: flex;
     justify-content: center;
+    position: relative;
 
     .App {
       border: 1px solid #d3d3d3;
@@ -37,6 +38,11 @@ body {
       width: 100%;
       display: flex;
       flex-direction: column;
+
+      @media (max-width: 1689px) {
+        border-left: none;
+        border-right: none;
+      }
 
       main {
         margin-bottom: 40px;

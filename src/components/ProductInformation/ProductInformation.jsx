@@ -62,7 +62,7 @@ const ProductInformation = () => {
           <div className={styles.priceAndShipping}>
             <div className={styles.price}>$1600</div>
 
-            <div className={styles.ShippingContainer}>
+            <div className={styles.shippingContainer}>
               <div className={styles.shipping}>+20$ Shipping to:</div>
 
               <ProductDropdown

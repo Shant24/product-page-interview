@@ -37,21 +37,21 @@ const ProductSlider = () => {
   const [modalImageIndex, setModalImageIndex] = useState(7);
 
   const handleOpenModal = (i) => {
-    setModalImageIndex(i);
-    setViewModalIsOpen(true);
-
     document.body.style.overflow = 'hidden';
 
     if (window.innerHeight < document.body.offsetHeight) {
       document.body.style.paddingRight = '17px';
     }
+
+    setModalImageIndex(i);
+    setViewModalIsOpen(true);
   };
 
   const handleCloseModal = () => {
-    setViewModalIsOpen(false);
-
     document.body.style.overflow = 'unset';
     document.body.style.paddingRight = '0';
+
+    setViewModalIsOpen(false);
   };
 
   const bigSlide = photos.map(({ src, id }, i) => (
@@ -69,7 +69,7 @@ const ProductSlider = () => {
     </SwiperSlide>
   ));
 
-  const images = photos.map(({ src }) => src);
+  const viewImages = photos.map(({ src }) => src);
 
   return (
     <div className="productSliderContainer">
@@ -83,15 +83,24 @@ const ProductSlider = () => {
           watchSlidesProgress
           onSwiper={setThumbsSwiper}
           onSlideChange={setThumbsSwiper}
+          breakpoints={{
+            320: {
+              slidesPerView: 5,
+            },
+            1320: {
+              slidesPerView: 6,
+            },
+          }}
         >
           {leftSlide}
         </Swiper>
 
         <div className="bigSliderContainer">
           <Swiper
+            autoHeight={true}
             className="bigSlider"
             effect="fade"
-            spaceBetween={1}
+            spaceBetween={0}
             slidesPerView={1}
             thumbs={{ swiper: thumbsSwiper }}
             navigation={{
@@ -113,7 +122,7 @@ const ProductSlider = () => {
 
       {viewModalIsOpen && (
         <ImageViewer
-          src={images}
+          src={viewImages}
           currentIndex={modalImageIndex}
           onClose={handleCloseModal}
         />

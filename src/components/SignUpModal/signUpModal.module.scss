@@ -1,0 +1,179 @@
+.signUpModal {
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(#000000, 0.5);
+  z-index: 100;
+
+  .signUpWrapper {
+    padding: 75px 20px;
+    max-width: 574px;
+    max-height: 712px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 12px;
+
+    @media (max-width: 400px) {
+      padding: 30px 10px;
+    }
+
+    .closeButton {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 19px;
+      right: 18.5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    h3 {
+      margin: -1px 0 0 -2px;
+      margin-top: -1px;
+      margin-left: -2px;
+      font-family: var(--font-halvar);
+      font-size: 44px;
+      line-height: 57px;
+      text-align: center;
+      letter-spacing: -0.9px;
+      word-spacing: -1px;
+      font-weight: 400;
+      transform: scale(1, 0.99);
+    }
+
+    .signUpText {
+      margin: 20px 0 0 -1px;
+      font-size: 14px;
+      letter-spacing: -0.2px;
+      text-align: center;
+    }
+
+    .buttonsContainer {
+      margin: 57px 0 0 -1px;
+      display: flex;
+      flex-direction: column;
+
+      @media (max-width: 400px) {
+        margin: 30px 0 0 -1px;
+      }
+
+      button {
+        margin-bottom: 13.5px;
+        width: 354px;
+        height: 51px;
+        position: relative;
+        border: none;
+        border-radius: 4px;
+        outline: none;
+        cursor: pointer;
+        user-select: none;
+
+        @media (max-width: 400px) {
+          width: 280px;
+        }
+
+        span {
+          font-size: 18px;
+          font-weight: 600;
+          font-family: var(--font-arial);
+          letter-spacing: -0.24px;
+          letter-spacing: -0.6px;
+        }
+      }
+
+      .facebook {
+        height: 55px;
+        color: white;
+        background-color: #425894;
+        letter-spacing: -0.6px;
+
+        &:hover {
+          background-color: #2f4788;
+        }
+
+        svg {
+          position: absolute;
+          top: 18px;
+          left: 51px;
+          color: white;
+          font-size: 20px;
+
+          @media (max-width: 400px) {
+            left: 20px;
+            top: 12px;
+          }
+        }
+
+        span {
+          margin: 1px 0 0 1px;
+          display: block;
+        }
+      }
+
+      .google {
+        background-color: white;
+        border: 2px solid #ececec;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+          span {
+            color: #333;
+          }
+        }
+
+        img {
+          margin: 1px 11px 0 0;
+          height: 19px;
+        }
+
+        span {
+          display: block;
+          margin-top: 2px;
+          letter-spacing: -0.7px;
+        }
+      }
+
+      .apple {
+        color: white;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+          background-color: #333;
+        }
+
+        svg {
+          margin: 1px 11px 0 2px;
+          font-size: 20px;
+
+          @media (max-width: 400px) {
+            margin: 0 11px 0 2px;
+          }
+        }
+
+        span {
+          margin: 1px 0 0 2px;
+          display: block;
+          letter-spacing: -0.6px;
+        }
+      }
+    }
+  }
+}

@@ -4,7 +4,6 @@ import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import NotFound from './components/pages/NotFound/NotFound';
 import SingleProduct from './components/pages/SingleProduct/SingleProduct';
-import ProductSlider from './components/ProductSlider/ProductSlider';
 
 const App = () => {
   const [windowHeight, setWindowHeight] = useState(window.innerHeight);
@@ -27,7 +26,6 @@ const App = () => {
             render={() => <Redirect to="/single-product" />}
           />
           <Route path="/single-product" component={SingleProduct} />
-          <Route path="/product" component={ProductSlider} />
           <Route path="/not-found" component={NotFound} />
           <Redirect to="/not-found" />
         </Switch>

@@ -4,14 +4,16 @@ import styles from './footer.module.scss';
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      Powered by Shant Sargsyan for interview in
-      <a
-        href="https://brainstormtech.io/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Brainstorm Technologies
-      </a>
+      <div>
+        <span>Created by Shant Sargsyan for interview in</span>
+        <a
+          href="https://brainstormtech.io/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Brainstorm Technologies
+        </a>
+      </div>
     </footer>
   );
 };

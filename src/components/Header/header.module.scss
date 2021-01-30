@@ -5,24 +5,36 @@
   align-items: center;
   border-bottom: 1px solid var(--border-color);
 
+  @media (max-width: 768px) {
+    justify-content: space-between;
+  }
+
   .logoWrapper {
     width: 237px;
     height: 100%;
     border-right: 1px solid var(--border-color);
+
+    @media (max-width: 978px) {
+      width: 150px;
+    }
   }
 
   form {
-    margin-top: -2px;
-    padding-left: 30px;
+    margin: -2px 0 0 30px;
     flex: auto;
     display: flex;
     align-items: center;
     position: relative;
 
+    @media (max-width: 768px) {
+      margin: 0;
+      padding: 0;
+    }
+
     .searchIcon {
       position: absolute;
       top: 9px;
-      left: 41px;
+      left: 11px;
     }
 
     input,
@@ -40,6 +52,14 @@
       letter-spacing: -0.24px;
       border-radius: 6px 0 0 6px;
 
+      @media (max-width: 978px) {
+        width: 250px;
+      }
+
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+
       &::placeholder {
         color: var(--placeholder-color);
       }
@@ -56,6 +76,10 @@
       border-left: none;
       border-radius: 0 6px 6px 0;
 
+      @media (max-width: 768px) {
+        margin: 0;
+      }
+
       &:hover {
         color: white;
         background-color: black;
@@ -64,19 +88,172 @@
   }
 
   .userWrapper {
-    padding: 0 80px;
     display: flex;
     align-items: center;
+    user-select: none;
 
-    a {
-      margin-top: -2px;
-      margin-right: -0.5px;
-      padding: 15px 20px;
-      color: black;
+    .userMenu {
+      margin: -2px 79.5px 0 0;
+      position: relative;
+
+      @media (max-width: 978px) {
+        margin: -2px 20px 0 0;
+        text-align: center;
+      }
+
+      a {
+        padding: 15px 20px;
+        color: black;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: -0.2px;
+        text-decoration: none;
+
+        @media (max-width: 978px) {
+          display: block;
+        }
+
+        &:hover {
+          color: #333;
+        }
+      }
+
+      div {
+        display: none;
+      }
+
+      &:hover {
+        div {
+          position: absolute;
+          bottom: -55px;
+          left: 0;
+          width: 100%;
+          height: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: white;
+          border-radius: 6px;
+          background-color: black;
+          cursor: pointer;
+
+          @media (max-width: 700px) {
+            display: none;
+          }
+
+          &::before {
+            content: '';
+            width: 30px;
+            height: 10px;
+            position: absolute;
+            top: -9px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--buttons-text-color-black);
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+          }
+        }
+      }
+    }
+
+    .signUpButton {
+      margin: -2px 20px 0 0;
+      width: 103px;
+      height: 38px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-weight: bold;
       font-size: 14px;
-      font-weight: 700;
-      letter-spacing: -0.2px;
-      text-decoration: none;
+      letter-spacing: -0.24px;
+      text-transform: uppercase;
+      background: black;
+      border-radius: 6px;
+      cursor: pointer;
+
+      &:hover {
+        color: white;
+        background: #333;
+      }
+    }
+  }
+
+  .menuIcon,
+  .mobileMenu {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .menuIcon {
+      margin-right: 20px;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 40px;
+      cursor: pointer;
+    }
+
+    .mobileMenu {
+      padding: 100px 10px;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: white;
+      z-index: 50;
+      transform: translate(120%);
+      transition: 0.1s all ease-in-out;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &.active {
+        transform: translate(0);
+      }
+
+      .menuIcon {
+        position: absolute;
+        top: 10px;
+        right: 17px;
+      }
+
+      form {
+        flex: none;
+        margin-bottom: 30px;
+      }
+
+      .userWrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .userMenu {
+          margin: 0 0 10px;
+          width: 100%;
+
+          a {
+            width: 100%;
+            font-weight: normal;
+            font-size: 24px;
+          }
+        }
+
+        .logOutButton {
+          margin-top: 10px;
+          width: 100%;
+          height: 57px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 24px;
+          cursor: pointer;
+        }
+      }
     }
   }
 }

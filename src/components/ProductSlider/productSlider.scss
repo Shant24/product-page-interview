@@ -2,15 +2,39 @@
   padding-right: 10px;
   width: 50%;
 
+  @media (max-width: 1689px) {
+    padding-right: 0;
+    width: 60%;
+  }
+
+  @media (max-width: 1320px) {
+    width: 60%;
+    padding-right: 0;
+  }
+
+  @media (max-width: 978px) {
+    width: 90%;
+    display: block;
+    justify-content: center;
+  }
+
   .productSlider {
     margin-top: 44px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 
     .swiper-container.thumbs {
       margin: 0;
-      height: 694px;
       width: 101.31px;
+      height: 694px;
+
+      @media (max-width: 1320px) {
+        height: 520px;
+      }
+
+      @media (max-width: 769px) {
+        display: none;
+      }
 
       .swiper-wrapper {
         .swiper-slide {
@@ -32,49 +56,88 @@
       }
     }
 
-    .swiper-container.bigSlider {
-      margin: 0;
-      width: 589px;
-      height: 694px;
-
-      .swiper-wrapper {
-        .swiper-slide {
-          width: 589px;
-          height: 694px;
-          position: relative;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          img {
-            object-fit: contain;
-          }
-
-          .openViewModal {
-            width: 138.6px;
-            height: 42px;
-            position: absolute;
-            top: 25px;
-            left: 23px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #ffffff;
-            background: #0066ff;
-            border-radius: 9.00287px;
-            font-weight: bold;
-            font-size: 18px;
-            line-height: 25px;
-            letter-spacing: -0.24px;
-            cursor: pointer;
-          }
-        }
-      }
-    }
-
     .bigSliderContainer {
       margin: 0 0 110px 23px;
       position: relative;
+
+      @media (max-width: 1370px) {
+        margin: 0 0 110px 15px;
+      }
+
+      @media (max-width: 769px) {
+        margin: 0 0 100px 0;
+      }
+
+      @media (max-width: 520px) {
+        margin: 0 0 80px 0;
+      }
+
+      .swiper-container.bigSlider {
+        margin: 0;
+        width: 589px;
+        height: 694px;
+
+        @media (max-width: 1320px) {
+          width: 450px;
+          height: 520px;
+        }
+
+        @media (max-width: 520px) {
+          width: 300px;
+          height: 355px;
+        }
+
+        .swiper-wrapper {
+          .swiper-slide {
+            width: 589px;
+            height: 694px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            object-fit: contain;
+            background-color: white;
+
+            @media (max-width: 1320px) {
+              width: 450px;
+              height: 520px;
+              border: 1px solid var(--border-color);
+            }
+
+            @media (max-width: 520px) {
+              width: 300px;
+              height: 355px;
+            }
+
+            img {
+              object-fit: cover;
+
+              @media (max-width: 1320px) {
+                width: 100%;
+              }
+            }
+
+            .openViewModal {
+              width: 138.6px;
+              height: 42px;
+              position: absolute;
+              top: 25px;
+              left: 23px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              color: #ffffff;
+              background: #0066ff;
+              border-radius: 9.00287px;
+              font-weight: bold;
+              font-size: 18px;
+              line-height: 25px;
+              letter-spacing: -0.24px;
+              cursor: pointer;
+            }
+          }
+        }
+      }
 
       .swiperButtonNext,
       .swiperButtonPrev {
@@ -89,16 +152,28 @@
         background: #ffffff;
         cursor: pointer;
         user-select: none;
+
+        @media (max-width: 520px) {
+          bottom: -70px;
+        }
       }
 
       .swiperButtonNext {
         border-radius: 0 6px 6px 0;
-        right: 121px;
+        right: 122px;
+
+        @media (max-width: 520px) {
+          right: 30px;
+        }
       }
 
       .swiperButtonPrev {
         border-radius: 6px 0 0 6px;
-        left: 121px;
+        left: 122px;
+
+        @media (max-width: 520px) {
+          left: 30px;
+        }
       }
     }
   }
