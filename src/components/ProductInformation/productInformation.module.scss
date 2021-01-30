@@ -1,0 +1,298 @@
+.productInformationContainer {
+  padding: 46px 0 0 65px;
+  width: 50%;
+
+  .informationContainer {
+    max-width: 535px;
+    width: 100%;
+
+    .addingTime {
+      margin-left: -2px;
+      padding-left: 1.5px;
+      color: #b7b7b7;
+      font-size: 14px;
+      letter-spacing: -0.2px;
+      padding-bottom: 13px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .titleAndSize {
+      margin-top: 33px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-halvar);
+      font-size: 24px;
+      letter-spacing: -0.24px;
+      word-spacing: -0.5px;
+
+      .title {
+        max-width: 60%;
+        font-weight: 400;
+        line-height: 31px;
+      }
+
+      .size {
+        margin-top: 10px;
+        padding-right: 0.5px;
+      }
+    }
+
+    .productInformation {
+      margin-top: 13px;
+      font-size: 14px;
+      letter-spacing: -0.2px;
+
+      div {
+        margin-bottom: 4px;
+      }
+    }
+
+    .productSaleContainer {
+      margin-top: 10px;
+      display: flex;
+
+      .priceAndShipping {
+        flex: auto;
+
+        .price {
+          margin: -2px 0 0 -1px;
+          font-size: 24px;
+          font-family: var(--font-halvar);
+          letter-spacing: -0.24px;
+        }
+
+        .ShippingContainer {
+          margin-top: 7px;
+          display: flex;
+          align-items: center;
+
+          .shipping {
+            margin: -2px 15px 0 0px;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: -0.012em;
+          }
+        }
+      }
+
+      svg {
+        margin-right: 1px;
+      }
+    }
+
+    .buttonsContainer {
+      margin: 44px 0 0;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      button {
+        margin-bottom: 18px;
+        width: 359px;
+        height: 54px;
+        color: var(--buttons-text-color-black);
+        font-size: 18px;
+        font-weight: 600;
+        font-family: inherit;
+        letter-spacing: -0.015em;
+        border-radius: 6px;
+        background-color: inherit;
+        border: 1px solid black;
+        outline: none;
+        cursor: pointer;
+
+        &:first-child,
+        &:hover {
+          border: 1px solid var(--buttons-text-color-black);
+          color: white;
+          background: var(--buttons-text-color-black);
+        }
+
+        &:last-child {
+          margin-bottom: 40px;
+          position: relative;
+
+          &:hover {
+            img {
+              filter: invert(100%);
+            }
+          }
+
+          .helpingContainer {
+            position: absolute;
+            top: 16px;
+            right: 17px;
+
+            div {
+              display: none;
+            }
+
+            img:hover + div {
+              padding: 10px 20px;
+              width: max-content;
+              display: block;
+              position: absolute;
+              top: 46px;
+              left: 50%;
+              color: white;
+              background-color: var(--buttons-text-color-black);
+              transform: translateX(-50%);
+              border-radius: 6px;
+
+              &::before {
+                content: '';
+                width: 30px;
+                height: 10px;
+                position: absolute;
+                top: -9px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: var(--buttons-text-color-black);
+                clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .productDescription {
+      margin: 41px -1px 0 0;
+      border-bottom: 1px solid var(--border-color);
+
+      .descriptionTitle {
+        margin-bottom: 13px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+
+        letter-spacing: -0.015em;
+      }
+
+      .descItem {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: -0.015em;
+
+        &:last-child {
+          margin-bottom: 44px;
+        }
+      }
+    }
+
+    .sellerContainer {
+      margin-top: 43px;
+
+      .sellerInformation {
+        display: flex;
+
+        .sellerPhoto {
+          margin: 1px 17px 0 0;
+          width: 60px;
+          height: 60px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          overflow: hidden;
+
+          img {
+            object-fit: contain;
+          }
+        }
+
+        .sellerNameAndFeedback {
+          flex: auto;
+          display: flex;
+          flex-direction: column;
+
+          .sellerName {
+            margin-left: 0.5px;
+            margin-top: -2px;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 25px;
+            letter-spacing: -0.015em;
+          }
+
+          .sellerRate {
+            margin-top: 9px;
+            display: flex;
+
+            .rateStars {
+              margin-right: 7px;
+
+              svg {
+                margin-right: 5px;
+              }
+            }
+
+            .feedbackCount {
+              a {
+                margin-top: 2px;
+                display: block;
+                color: black;
+                font-weight: 500;
+                font-size: 14px;
+                letter-spacing: -0.24px;
+                text-decoration: none;
+                border-bottom: 1px solid black;
+              }
+            }
+          }
+        }
+
+        .sellerHistory {
+          margin-top: 3px;
+          margin-right: 8px;
+          display: flex;
+          flex-direction: column;
+          text-align: end;
+
+          small {
+            color: #a0a0a0;
+            font-size: 12px;
+            line-height: 17px;
+            letter-spacing: -0.015em;
+          }
+
+          .soldItems {
+            margin: 12px 2px 6px 0;
+
+            a {
+              color: black;
+              font-size: 14px;
+              line-height: 20px;
+              letter-spacing: -0.015em;
+              text-decoration: none;
+              border-bottom: 1px solid black;
+            }
+          }
+        }
+      }
+
+      .messageLink {
+        margin: 23px -1px 0 0;
+        width: 169px;
+        height: 42.64px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--buttons-text-color-black);
+        font-weight: 600;
+        font-size: 18px;
+        letter-spacing: -0.24px;
+        text-decoration: none;
+        border: 1px solid black;
+        border-radius: 6px;
+
+        &:hover {
+          color: white;
+          background-color: black;
+        }
+      }
+    }
+  }
+}

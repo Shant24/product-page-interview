@@ -1,0 +1,47 @@
+.shippingOption {
+  &.is-open {
+    .optionControl {
+      border-radius: 6px 6px 0 0;
+    }
+  }
+
+  .optionControl {
+    width: 130px;
+    height: 30px;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 6px;
+    border: 1px solid #a0a0a0;
+    padding-left: 12px;
+    transition: none;
+    cursor: pointer;
+
+    .optionPlaceholder {
+      margin: -0.5px 0 0 -0.5px;
+      font-size: 14px;
+      line-height: 15px;
+    }
+
+    .arrowOpen,
+    .arrowClose {
+      margin-right: 11px;
+      padding-bottom: 1px;
+      transition: 200ms ease-in-out;
+    }
+
+    .arrowClose {
+      transform: rotate(180deg);
+    }
+  }
+  .optionMenu {
+    .Dropdown-option {
+      &.is-selected,
+      &:hover {
+        background-color: #333;
+        color: white;
+      }
+    }
+  }
+}

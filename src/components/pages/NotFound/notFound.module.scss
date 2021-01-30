@@ -1,0 +1,36 @@
+.notFound {
+  width: 100%;
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--gray);
+  font-family: var(--font-halvar);
+
+  h1 {
+    font-size: 70px;
+    margin-bottom: 20px;
+  }
+
+  div {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  a {
+    margin-top: 20px;
+    padding: 10px 20px;
+    color: var(--gray);
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    border-radius: 6px;
+    border: 1px solid black;
+    text-decoration: none;
+
+    &:hover {
+      color: black;
+    }
+  }
+}

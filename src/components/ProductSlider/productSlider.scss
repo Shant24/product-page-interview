@@ -1,0 +1,109 @@
+.productSliderContainer {
+  padding-right: 10px;
+  width: 50%;
+
+  .productSlider {
+    margin-top: 44px;
+    display: flex;
+    justify-content: flex-end;
+
+    .swiper-container.thumbs {
+      margin: 0;
+      height: 694px;
+      width: 101.31px;
+
+      .swiper-wrapper {
+        .swiper-slide {
+          height: 694px;
+          width: 101.31px;
+          opacity: 0.3;
+          cursor: pointer;
+
+          &.swiper-slide-thumb-active {
+            opacity: 1;
+          }
+
+          img {
+            width: 101.31px;
+            height: 101.31px;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+
+    .swiper-container.bigSlider {
+      margin: 0;
+      width: 589px;
+      height: 694px;
+
+      .swiper-wrapper {
+        .swiper-slide {
+          width: 589px;
+          height: 694px;
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            object-fit: contain;
+          }
+
+          .openViewModal {
+            width: 138.6px;
+            height: 42px;
+            position: absolute;
+            top: 25px;
+            left: 23px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            background: #0066ff;
+            border-radius: 9.00287px;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 25px;
+            letter-spacing: -0.24px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .bigSliderContainer {
+      margin: 0 0 110px 23px;
+      position: relative;
+
+      .swiperButtonNext,
+      .swiperButtonPrev {
+        width: 45.28px;
+        height: 56px;
+        position: absolute;
+        bottom: -91px;
+        border: 1px solid #d3d3d3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #ffffff;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .swiperButtonNext {
+        border-radius: 0 6px 6px 0;
+        right: 121px;
+      }
+
+      .swiperButtonPrev {
+        border-radius: 6px 0 0 6px;
+        left: 121px;
+      }
+    }
+  }
+
+  .react-simple-image-viewer__modal {
+    background-color: rgba(black, 0.8);
+  }
+}

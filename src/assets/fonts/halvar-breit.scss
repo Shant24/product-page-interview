@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'Halvar Breit';
+  src: url('HalvarBreit-Lt.eot');
+  src: local('Halvar Breitschrift Light'), local('HalvarBreit-Lt'),
+    url('HalvarBreit-Lt.eot?#iefix') format('embedded-opentype'),
+    url('HalvarBreit-Lt.woff2') format('woff2'),
+    url('HalvarBreit-Lt.woff') format('woff'),
+    url('HalvarBreit-Lt.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Halvar Breit';
+  src: url('HalvarBreit-Rg.eot');
+  src: local('Halvar Breitschrift Regular'), local('HalvarBreit-Rg'),
+    url('HalvarBreit-Rg.eot?#iefix') format('embedded-opentype'),
+    url('HalvarBreit-Rg.woff2') format('woff2'),
+    url('HalvarBreit-Rg.woff') format('woff'),
+    url('HalvarBreit-Rg.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Halvar Breit';
+  src: url('HalvarBreit-Md.eot');
+  src: local('Halvar Breitschrift Medium'), local('HalvarBreit-Md'),
+    url('HalvarBreit-Md.eot?#iefix') format('embedded-opentype'),
+    url('HalvarBreit-Md.woff2') format('woff2'),
+    url('HalvarBreit-Md.woff') format('woff'),
+    url('HalvarBreit-Md.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Halvar Breit';
+  src: url('HalvarBreit-Bd.eot');
+  src: local('Halvar Breitschrift Bold'), local('HalvarBreit-Bd'),
+    url('HalvarBreit-Bd.eot?#iefix') format('embedded-opentype'),
+    url('HalvarBreit-Bd.woff2') format('woff2'),
+    url('HalvarBreit-Bd.woff') format('woff'),
+    url('HalvarBreit-Bd.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Halvar Breit';
+  src: url('HalvarBreit-XBd.eot');
+  src: local('Halvar Breitschrift ExtraBold'), local('HalvarBreit-XBd'),
+    url('HalvarBreit-XBd.eot?#iefix') format('embedded-opentype'),
+    url('HalvarBreit-XBd.woff2') format('woff2'),
+    url('HalvarBreit-XBd.woff') format('woff'),
+    url('HalvarBreit-XBd.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}

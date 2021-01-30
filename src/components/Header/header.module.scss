@@ -1,0 +1,82 @@
+.header {
+  width: 100%;
+  height: 81px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+
+  .logoWrapper {
+    width: 237px;
+    height: 100%;
+    border-right: 1px solid var(--border-color);
+  }
+
+  form {
+    margin-top: -2px;
+    padding-left: 30px;
+    flex: auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .searchIcon {
+      position: absolute;
+      top: 9px;
+      left: 41px;
+    }
+
+    input,
+    button {
+      height: 38px;
+      border: 1px solid black;
+      background-color: inherit;
+      outline: none;
+    }
+
+    input {
+      padding: 0 20px 0 41px;
+      width: 407px;
+      font-size: 16px;
+      letter-spacing: -0.24px;
+      border-radius: 6px 0 0 6px;
+
+      &::placeholder {
+        color: var(--placeholder-color);
+      }
+    }
+
+    button {
+      padding-left: 2px;
+      width: 102px;
+      color: var(--gray);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: -0.25px;
+      text-transform: uppercase;
+      border-left: none;
+      border-radius: 0 6px 6px 0;
+
+      &:hover {
+        color: white;
+        background-color: black;
+      }
+    }
+  }
+
+  .userWrapper {
+    padding: 0 80px;
+    display: flex;
+    align-items: center;
+
+    a {
+      margin-top: -2px;
+      margin-right: -0.5px;
+      padding: 15px 20px;
+      color: black;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+      text-decoration: none;
+    }
+  }
+}
