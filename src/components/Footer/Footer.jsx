@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div>
-        <span>Created by Shant Sargsyan for interview in</span>
+        <span>Created by Shant Sargsyan for an interview at</span>
         <a
           href="https://brainstormtech.io/"
           target="_blank"
