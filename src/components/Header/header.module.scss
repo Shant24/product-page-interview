@@ -118,12 +118,15 @@
         }
       }
 
-      div {
+      .logOutButton {
         display: none;
+        outline: none;
+        border: none;
       }
 
       &:hover {
-        div {
+        .logOutButton {
+          display: block;
           position: absolute;
           bottom: -55px;
           left: 0;
@@ -136,6 +139,10 @@
           border-radius: 6px;
           background-color: black;
           cursor: pointer;
+
+          @media (max-width: 978px) {
+            bottom: -38px;
+          }
 
           @media (max-width: 700px) {
             display: none;
@@ -251,6 +258,9 @@
           justify-content: center;
           align-items: center;
           font-size: 24px;
+          border: none;
+          background-color: inherit;
+          outline: none;
           cursor: pointer;
         }
       }

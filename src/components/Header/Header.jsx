@@ -8,8 +8,20 @@ import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import CloseIcon from '../svg/CloseIcon';
+import { GoogleLogout } from 'react-google-login';
+import { facebookLogout } from '../../helpers/auth';
 
-const Header = ({ isAuth, signUpModalISOpen, signUpModalOpen, logOut }) => {
+const Header = (props) => {
+  const {
+    isAuth,
+    signUpModalISOpen,
+    signUpModalOpen,
+    logOut,
+    facebookAuthData,
+    googleAuthData,
+    appleAuthData,
+  } = props;
+
   const [searchValue, setSearchValue] = useState('');
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
   const [isSmallSize, setIsSmallSize] = useState(window.innerWidth <= 768);
@@ -20,7 +32,6 @@ const Header = ({ isAuth, signUpModalISOpen, signUpModalOpen, logOut }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(searchValue);
     // async fetch
     setSearchValue('');
   };
@@ -82,7 +93,37 @@ const Header = ({ isAuth, signUpModalISOpen, signUpModalOpen, logOut }) => {
             {isAuth ? (
               <div className={styles.userMenu}>
                 <Link to="/">My Account</Link>
-                <div onClick={logOut}>Log out</div>
+
+                {facebookAuthData && (
+                  <button
+                    className={styles.logOutButton}
+                    onClick={facebookLogout}
+                  >
+                    Sign out
+                  </button>
+                )}
+                {googleAuthData && (
+                  <GoogleLogout
+                    clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+                    buttonText="Logout"
+                    onLogoutSuccess={logOut}
+                    cookiePolicy={'single_host_origin'}
+                    render={(renderProps) => (
+                      <button
+                        className={styles.logOutButton}
+                        onClick={renderProps.onClick}
+                        disabled={renderProps.disabled}
+                      >
+                        Sign out
+                      </button>
+                    )}
+                  />
+                )}
+                {appleAuthData && (
+                  <button className={styles.logOutButton} onClick={logOut}>
+                    Sign out
+                  </button>
+                )}
               </div>
             ) : (
               <div className={styles.signUpButton} onClick={handleClickSignUp}>
@@ -126,9 +167,36 @@ const Header = ({ isAuth, signUpModalISOpen, signUpModalOpen, logOut }) => {
                 <Link to="/">My Account</Link>
               </div>
 
-              <div className={styles.logOutButton} onClick={logOut}>
-                Log out
-              </div>
+              {facebookAuthData && (
+                <button
+                  className={styles.logOutButton}
+                  onClick={facebookLogout}
+                >
+                  Sign out
+                </button>
+              )}
+              {googleAuthData && (
+                <GoogleLogout
+                  clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+                  buttonText="Logout"
+                  onLogoutSuccess={logOut}
+                  cookiePolicy={'single_host_origin'}
+                  render={(renderProps) => (
+                    <button
+                      className={styles.logOutButton}
+                      onClick={renderProps.onClick}
+                      disabled={renderProps.disabled}
+                    >
+                      Sign out
+                    </button>
+                  )}
+                />
+              )}
+              {appleAuthData && (
+                <button className={styles.logOutButton} onClick={logOut}>
+                  Sign out
+                </button>
+              )}
             </>
           ) : (
             <div className={styles.signUpButton} onClick={handleClickSignUp}>
@@ -146,6 +214,9 @@ const Header = ({ isAuth, signUpModalISOpen, signUpModalOpen, logOut }) => {
 const mapStateToProps = (state) => ({
   signUpModalISOpen: state.authData.signUpModalISOpen,
   isAuth: state.authData.isAuth,
+  facebookAuthData: state.authData.facebook,
+  googleAuthData: state.authData.google,
+  appleAuthData: state.authData.apple,
 });
 
 export default connect(mapStateToProps, { signUpModalOpen, logOut })(

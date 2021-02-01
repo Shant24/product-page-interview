@@ -1,8 +1,16 @@
 import * as authTypes from '../types/authTypes';
 
-export const signUp = () => ({ type: authTypes.SIGN_UP_FETCH });
+export const signUp = (signUpType, data = null) => ({
+  type: authTypes.SIGN_UP_FETCH,
+  signUpType,
+  data,
+});
 
-export const signUpSuccess = () => ({ type: authTypes.SIGN_UP_SUCCESS });
+export const signUpSuccess = (signUpType, data) => ({
+  type: authTypes.SIGN_UP_SUCCESS,
+  signUpType,
+  data,
+});
 
 export const logOut = () => ({ type: authTypes.LOG_OUT });
 

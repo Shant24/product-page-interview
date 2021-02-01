@@ -1,4 +1,0 @@
-export const LOADING_SHOW = 'LOADING_SHOW';
-export const LOADING_HIDE = 'LOADING_HIDE';
-export const ERROR_MESSAGE = 'ERROR_MESSAGE';
-export const SUCCESS_MESSAGE = 'SUCCESS_MESSAGE';
