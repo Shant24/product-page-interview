@@ -21,7 +21,11 @@
   .productSlider {
     margin-top: 44px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+
+    @media (max-width: 1320px) {
+      justify-content: center;
+    }
 
     .swiper-container.thumbs {
       margin: 0;
